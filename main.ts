@@ -1,16 +1,18 @@
-// One-Line Laugh Sprint — screen-time report joke.
+// One-Line Laugh Sprint — smart fridge intervention joke.
 // Pure Node.js stdlib, no dependencies, no randomness, no network.
-// Writes exactly one original funny line (106 chars) to entry.txt.
+// Writes exactly one original funny line (137 chars) to entry.txt.
 // Deterministic by design: the same fixed line is written on every run.
 import * as fs from "node:fs";
 import * as path from "node:path";
 
 const LINE =
-  "My phone just sent my screen-time report: 7 hours a day. I opened it to check, and that's how it became 8.";
+  "My smart fridge now texts me 'we need to talk' whenever I open it after midnight — even my appliances have started staging interventions.";
 
 // Validation guard: the entry must be exactly one non-blank line, 1-200 chars.
 if (LINE.trim().length === 0 || LINE.length < 1 || LINE.length > 200) {
-  console.error("entry line must be 1-200 non-blank characters");
+  console.error(
+    `entry line must be a single non-blank line of 1-200 characters (got ${LINE.length})`,
+  );
   process.exit(1);
 }
 
